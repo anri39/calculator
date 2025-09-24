@@ -41,7 +41,7 @@ function App() {
     e.preventDefault();
     const lastChar = display.slice(-1);
     if (btn === "=") {
-      if (lastChar === "" || ["+", "-", "*", "/"].includes(lastChar)) {
+      if (lastChar === "" || ["+", "-", "*", "/", "."].includes(lastChar)) {
         setError(true);
         setErrorMessage("Invalid Expression");
         return;
@@ -49,8 +49,8 @@ function App() {
       calculate();
     } else {
       if (
-        ["+", "-", "*", "/"].includes(btn) &&
-        ["+", "-", "*", "/"].includes(lastChar)
+        ["+", "-", "*", "/", "."].includes(btn) &&
+        ["+", "-", "*", "/", "."].includes(lastChar)
       )
         return;
       appendNumber(btn);
